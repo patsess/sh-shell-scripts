@@ -1,1 +1,1 @@
-# shell-practice
+# shell-scripts
