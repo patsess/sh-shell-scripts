@@ -37,6 +37,10 @@ else
     then
         create_new_home
         ATOM_HOME=$newhome apm install autocomplete-python platformio-ide-terminal atom-file-icons linter-flake8 minimap
+    elif [[ "$homename" == "scala" ]]
+    then
+        create_new_home
+        ATOM_HOME=$newhome apm install language-scala ide-scala
     else
         echo "unsupported name for Atom home, nothing created"
     fi
