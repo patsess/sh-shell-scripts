@@ -1,0 +1,30 @@
+
+### installing julia and atom with juno (on ubuntu) ###
+
+
+# installion instructions:
+
+http://docs.junolab.org/latest/man/installation.html
+
+https://linuxconfig.org/install-atom-on-ubuntu-18-04-bionic-beaver-linux
+
+https://julialang.org/downloads/platform.html
+
+# example of command to create a link to access julia from anywhere (via 'julia' command)
+sudo ln -s /home/pat/julia-1.0.3/bin/julia /usr/local/bin/julia
+
+# note on potential trouble installing:
+
+When I did this installisation on my ubuntu (16.04) laptop in January 2019 (when the laptop was a couple of years old), Julia installed without a problem, but Atom did not. The installion of Atom seemed to require the running a Pythion script that was complicated by the multiple versions of Python 3 that I had installed, and in different places on my machine. More specifically, due to staying up-to-date with Python 3 at different points in time, I had Python 3.5, Python 3.6 and Python 3.7 (in addition to Python 2.7). I had only very recently installed Python 3.7, and the is seemed to install to /usr/local/lib whereas the others were in /usr/lib. Possibly as a result of this and possibly a result of something else, some .so files in /usr/lib/python3/dist-packages (apt_pkg.cpython-35m-x86_64-linux-gnu.so and apt_inst.cpython-35m-x86_64-linux-gnu.so) did not exist for the later versions of Python 3. So I did two things, firstly installed Python 3.7 again but this time to /usr/lib (see links below), and secondly I copied the missing .so files to span the later versions of Python 3, e.g. 'cp apt_pkg.cpython-35m-x86_64-linux-gnu.so apt_pkg.cpython-36m-x86_64-linux-gnu.so' and 'cp apt_pkg.cpython-35m-x86_64-linux-gnu.so apt_pkg.cpython-37m-x86_64-linux-gnu.so', and similarly for the other .so file. After doing these two things the installion of Atom worked fine (I'm not sure which solved the problem, or whether both were required).
+
+
+# potentially helpful links for trouble-shooting:
+
+https://stackoverflow.com/questions/13708180/python-dev-installation-error-importerror-no-module-named-apt-pkg
+
+https://stackoverflow.com/questions/36070215/importerror-dynamic-module-does-not-define-module-export-function-pyinit-cv2?noredirect=1&lq=1
+
+https://tecadmin.net/install-python-3-7-on-ubuntu-linuxmint/
+
+https://stackoverflow.com/questions/44600424/how-to-install-python-3-x-version-in-usr-bin
+

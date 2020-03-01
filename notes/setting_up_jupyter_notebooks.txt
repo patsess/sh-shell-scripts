@@ -1,0 +1,8 @@
+
+# example of installing jupyter notebooks (ubuntu):
+- try running 'jupyter notebook &' and follow suggested instruction if it doesn't work
+- try running 'jupyter-notebook &' and follow suggested instruction if it doesn't work
+
+# adding virtual env to jupyter notebooks:
+https://stackoverflow.com/questions/42449814/running-jupyter-notebook-in-a-virtualenv-installed-sklearn-module-not-available
+

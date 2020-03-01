@@ -1,0 +1,6 @@
+
+creating a python3 vitual env:
+
+https://askubuntu.com/questions/879437/ensurepip-is-disabled-in-debian-ubuntu-for-the-system-python
+
+
