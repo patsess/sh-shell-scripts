@@ -6,7 +6,7 @@
 # note: if I start using subdirectories to group repos, then I could look at using the "find" shell function to find any requirements.txt files. Or, and perhaps better, would be to reserve the 'python_projects' directory for repos that can all sit together on one level, and to modify this script to take the directory as an input (and can default to current working directory) and then it can be used for any directory of repos, e.g. a 'companyX' directory etc.
 
 echo "updating pip"
-pip3 install --upgrade pip
+pip3 install --user --upgrade pip
 
 #defaultprojectsroot=~/python_projects
 defaultprojectsroot=$PWD
