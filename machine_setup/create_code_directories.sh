@@ -20,6 +20,10 @@ datadir=$projectsroot/data
 echo "creating data directory: $datadir"
 mkdir $datadir
 
+miscdir=$projectsroot/misc
+echo "creating misc directory: $miscdir"
+mkdir $miscdir
+
 for codedirname in "${codedirnames[@]}"
 do
     codedir=$projectsroot/$codedirname
