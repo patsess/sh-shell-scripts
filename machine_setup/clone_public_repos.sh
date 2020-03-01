@@ -2,9 +2,9 @@
 
 gitusername=$@
 
-if [[ -z "${githubname// }" ]]
+if [[ -z "${gitusername// }" ]]
 then
-    echo "exiting (sanity check failed): no GitHub username given"
+    echo "exiting (sanity check failed): no GitHub username given $gitusername"
     exit
 fi
 
@@ -42,8 +42,18 @@ do
 		continue
             fi
 
-            echo "cloning $reponame"
-	    cd $projectsroot/repos/ && git clone $repourl
+	    repoprefix=$(echo "${reponame%%-*}")  # take string before any "-"
+	    repoprefixdir="$projectsroot/../${repoprefix}_projects/repos"
+            if [[ -d "$repoprefixdir" ]]
+            then
+                echo "prefix detected ($repoprefix), so will clone to $repoprefixdir"
+                repodir=$repoprefixdir
+            else
+                repodir=$projectsroot/repos
+            fi
+
+	    echo "cloning $reponame (in $repodir)"
+	    cd $repodir/ && git clone $repourl
         fi
     fi
 done
