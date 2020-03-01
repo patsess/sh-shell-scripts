@@ -13,7 +13,7 @@ create_new_home () {
 if [[ ! -d "$atomhomesroot" ]]
 then
     echo "creating directory for Atom homes: $atomhomesroot"
-    mkdir atomhomesroot
+    mkdir $atomhomesroot
 fi
 
 if [[ -d "$newhome" ]]
@@ -36,7 +36,7 @@ else
     elif [[ "$homename" == "python" ]]
     then
         create_new_home
-        ATOM_HOME=$newhome apm install autocomplete-python platformio-ide-terminal atom-file-icons linter-flake8 minimap
+        ATOM_HOME=$newhome apm install autocomplete-python platformio-ide-terminal atom-file-icons minimap
     elif [[ "$homename" == "scala" ]]
     then
         create_new_home
