@@ -4,8 +4,8 @@ defaultprojectsroot=~/personal_projects
 projectsroot=${@:-$defaultprojectsroot}
 echo "project root set to $projectsroot"
 
-codedirnames=(shell_scripts latex_projects julia_projects python_projects scala_projects)
-envdirnames=(python_projects)
+codedirnames=(sh_projects tex_projects jl_projects py_projects scala_projects)
+envdirnames=(py_projects)
 
 if [[ -d "$projectsroot" ]]
 then
