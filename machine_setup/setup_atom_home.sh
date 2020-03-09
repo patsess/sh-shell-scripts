@@ -33,10 +33,14 @@ else
     then
         create_new_home
         ATOM_HOME=$newhome apm install uber-juno atom-file-icons minimap
-    elif [[ "$homename" == "python" ]]
+    elif [[ "$homename" == "python_blog" ]]
     then
         create_new_home
         ATOM_HOME=$newhome apm install autocomplete-python platformio-ide-terminal atom-file-icons minimap
+    elif [[ "$homename" == "python" ]]
+    then
+        create_new_home
+        ATOM_HOME=$newhome apm install Hydrogen file-icons highlight-selected linter linter-flake8 linter-ui-default minimap platformio-ide-terminal python-autopep8 python-indent python-tools
     elif [[ "$homename" == "scala" ]]
     then
         create_new_home
