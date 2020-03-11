@@ -45,7 +45,7 @@ else
     elif [[ "$homename" == "scala" ]]
     then
         create_new_home
-        ATOM_HOME=$newhome apm install language-scala ide-scala
+        ATOM_HOME=$newhome apm install language-scala ide-scala atom-file-icons minimap
     else
         echo "unsupported name for Atom home, nothing created"
     fi
