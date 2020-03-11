@@ -40,6 +40,7 @@ else
     elif [[ "$homename" == "python" ]]
     then
         create_new_home
+        pip3 install --user flake8
         ATOM_HOME=$newhome apm install Hydrogen file-icons highlight-selected linter linter-flake8 linter-ui-default minimap platformio-ide-terminal python-autopep8 python-indent python-tools
     elif [[ "$homename" == "scala" ]]
     then
