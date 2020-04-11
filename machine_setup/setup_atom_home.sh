@@ -40,11 +40,12 @@ else
     elif [[ "$homename" == "python" ]]
     then
         create_new_home
+        pip3 install --user flake8
         ATOM_HOME=$newhome apm install Hydrogen file-icons highlight-selected linter linter-flake8 linter-ui-default minimap platformio-ide-terminal python-autopep8 python-indent python-tools
     elif [[ "$homename" == "scala" ]]
     then
         create_new_home
-        ATOM_HOME=$newhome apm install language-scala ide-scala
+        ATOM_HOME=$newhome apm install language-scala ide-scala atom-file-icons minimap
     else
         echo "unsupported name for Atom home, nothing created"
     fi

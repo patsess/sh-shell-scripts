@@ -22,5 +22,5 @@ done
 if [[ $foundhome == 0 ]]
 then
     echo "Atom home not found, please try again, e.g. bash launch_atom python"
-    echo "avaiable Atom homes can be found at: ${atomhomes[@]}"
+    echo "available Atom homes can be found at: ${atomhomes[@]}"
 fi
