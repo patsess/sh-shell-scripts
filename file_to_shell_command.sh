@@ -15,7 +15,7 @@ fi
 #echo "marking file as executable"
 #chmod +x $filename
 
-if [[ ! -d "$projectsroot" ]]
+if [[ ! -d "$userhomebindir" ]]
 then
     echo "creating a bin directory in the user home: $userhomebindir"
     mkdir -p $userhomebindir
