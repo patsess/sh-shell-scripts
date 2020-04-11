@@ -12,16 +12,23 @@ then
     exit
 fi
 
-#echo "marking file as executable"
-#chmod +x $filename
-
 if [[ ! -d "$userhomebindir" ]]
 then
     echo "creating a bin directory in the user home: $userhomebindir"
     mkdir -p $userhomebindir
 
-    echo "adding user home bin directory to PATH"
-    echo 'export PATH=$PATH":$HOME/bin"' >> ~/.profile
+    if [[ ":$PATH:" == *":$HOME/bin:"* ]]
+    then
+        echo "path to bin dircectory already present, so will not be added"
+    else
+        if grep -Fxq 'export PATH=$PATH":$HOME/bin"' ~/.bashrc
+        then
+            echo "export for path directory already found in ~/.bashrc file, so will not be added"
+        else
+            echo "adding user home bin directory to PATH (using the ~/.bashrc file)"
+            echo 'export PATH=$PATH":$HOME/bin"' >> ~/.bashrc
+        fi
+    fi
 fi
 
 echo "copying file to user home bin directory ($userhomebindir)"
