@@ -3,6 +3,10 @@
 # tutorial: https://dbader.org/blog/how-to-make-command-line-commands-with-python
 
 filename=$@
+
+commandname="${filename%.*}"  # without the file extension
+commandname="${commandname//[_]/-}"
+
 userhomebindir=~/bin  # use a bin directory in the user's home, not in the system home to avoid potential conflicts
 
 echo "checking for interpreter shebang"
@@ -31,8 +35,8 @@ then
     fi
 fi
 
-echo "copying file to user home bin directory ($userhomebindir)"
-cp $filename $userhomebindir
+echo "copying file to user home bin directory ($userhomebindir) with command name $commandname"
+cp $filename $userhomebindir/$commandname
 
-echo "marking copied file as executable"
-chmod +x $userhomebindir/$filename
+echo "marking copied file ($commandname) as executable"
+chmod +x $userhomebindir/$commandname
