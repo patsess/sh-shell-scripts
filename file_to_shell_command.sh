@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # tutorial: https://dbader.org/blog/how-to-make-command-line-commands-with-python
+# info on creating shell commands using Python (particularly see 'Entry Point Basics' section): https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/
 
 filename=$@
 
