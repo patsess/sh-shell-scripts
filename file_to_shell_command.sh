@@ -2,7 +2,7 @@
 
 # tutorial (using Python): https://dbader.org/blog/how-to-make-command-line-commands-with-python
 # tutorial using Python and Click package: https://dbader.org/blog/python-commandline-tools-with-click
-# more info on creating shell commands using Python (particularly see 'Entry Point Basics' section): https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/
+# more info on creating shell commands using Python (particularly see 'Entry Point Basics' sectionl, which could be seen as adding to a setup.py as an alternative to my shell script below): https://realpython.com/comparing-python-command-line-parsing-libraries-argparse-docopt-click/
 
 filename=$@
 
