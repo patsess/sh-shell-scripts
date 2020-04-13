@@ -12,23 +12,19 @@ commandname="${commandname//[_]/-}"
 userhomebindir=~/bin  # use a bin directory in the user's home, not in the system home to avoid potential conflicts
 
 echo "checking for interpreter shebang"
-if [[ $(head -n 1 $filename | cut -c 1-2) != "#!" ]]
-then
+if [[ $(head -n 1 $filename | cut -c 1-2) != "#!" ]]; then
     echo "exiting: interpreter shebang (e.g. '#!/bin/bash' for a .sh file) could not be found"
     exit
 fi
 
-if [[ ! -d "$userhomebindir" ]]
-then
+if [[ ! -d "$userhomebindir" ]]; then
     echo "creating a bin directory in the user home: $userhomebindir"
     mkdir -p $userhomebindir
 
-    if [[ ":$PATH:" == *":$HOME/bin:"* ]]
-    then
+    if [[ ":$PATH:" == *":$HOME/bin:"* ]]; then
         echo "path to bin dircectory already present, so will not be added"
     else
-        if grep -Fxq 'export PATH=$PATH":$HOME/bin"' ~/.bashrc
-        then
+        if grep -Fxq 'export PATH=$PATH":$HOME/bin"' ~/.bashrc; then
             echo "export for path directory already found in ~/.bashrc file, so will not be added"
         else
             echo "adding user home bin directory to PATH (using the ~/.bashrc file)"
@@ -42,3 +38,4 @@ cp $filename $userhomebindir/$commandname
 
 echo "marking copied file ($commandname) as executable"
 chmod +x $userhomebindir/$commandname
+
